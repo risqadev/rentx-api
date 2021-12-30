@@ -1,11 +1,8 @@
-import { Category } from '../model/Category';
-import {
-  ICategoriesRepository,
-  ICreateCategoryDTO,
-} from './ICategoriesRepository';
+import { Category, ICategoryDTO } from '../model/Category';
+import { ICategoriesRepository } from './ICategoriesRepository';
 
 class PostgressCategoryRepository implements ICategoriesRepository {
-  create({ name, description }: ICreateCategoryDTO): void {
+  create({ name, description }: ICategoryDTO): void {
     console.log(name, description);
   }
   list(): Category[] {

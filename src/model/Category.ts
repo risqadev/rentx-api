@@ -1,12 +1,17 @@
 import { v4 as uuidV4 } from 'uuid';
 
+interface ICategoryDTO {
+  name: string;
+  description: string;
+}
+
 class Category {
   id: string;
   name: string;
   description: string;
   created_at: Date;
 
-  constructor(name: string, description: string) {
+  constructor({ name, description }: ICategoryDTO) {
     if (!this.id) {
       this.id = uuidV4();
     }
@@ -17,4 +22,4 @@ class Category {
   }
 }
 
-export { Category };
+export { Category, ICategoryDTO };
